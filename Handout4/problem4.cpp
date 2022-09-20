@@ -65,18 +65,16 @@ int main() {
         }
     }
 
-    cout << "GPA <= 3.0          GPA > 3.0" << endl;
-    cout << "_____________________________" << endl;
+    cout << "GPA <= 3.0           GPA > 3.0" << endl;
+    cout << "______________________________" << endl;
 
     while (!lowStack.emptyStack() || !highStack.emptyStack()) {
         string l = lowStack.popStack();
-        cout << setw(10) << left << l;
+        cout << setw(15) << left << l;
 
         string h = highStack.popStack();
-        cout << setw(10) << right << h << endl;
+        cout << setw(15) << right << h << endl;
     }
 
-    f.close();
-
-
+    return 0;
 }
