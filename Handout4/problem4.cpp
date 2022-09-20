@@ -35,7 +35,7 @@ class Stack {
 
         void pushStack(T x) {
             element[counter] = x;
-            counter++
+            counter++;
         }
 
         T popStack() {
@@ -65,5 +65,18 @@ int main() {
         }
     }
 
-    
+    cout << "GPA <= 3.0          GPA > 3.0" << endl;
+    cout << "_____________________________" << endl;
+
+    while (!lowStack.emptyStack() || !highStack.emptyStack()) {
+        string l = lowStack.popStack();
+        cout << setw(10) << left << l;
+
+        string h = highStack.popStack();
+        cout << setw(10) << right << h << endl;
+    }
+
+    f.close();
+
+
 }
