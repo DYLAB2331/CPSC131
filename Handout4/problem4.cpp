@@ -68,12 +68,22 @@ int main() {
     cout << "GPA <= 3.0           GPA > 3.0" << endl;
     cout << "______________________________" << endl;
 
-    while (!lowStack.emptyStack() || !highStack.emptyStack()) {
+    while (!lowStack.emptyStack() && !highStack.emptyStack()) {
         string l = lowStack.popStack();
         cout << setw(15) << left << l;
 
         string h = highStack.popStack();
         cout << setw(15) << right << h << endl;
+    }
+
+    if (!highStack.emptyStack()) {
+        string h = highStack.popStack();
+        cout << setw(30) << right << h << endl;
+    }
+
+        if (!lowStack.emptyStack()) {
+        string l = lowStack.popStack();
+        cout << setw(15) << left << l << endl;
     }
 
     return 0;
