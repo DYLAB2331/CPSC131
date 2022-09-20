@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 template <class T, int n>
@@ -43,8 +44,26 @@ class Stack {
         }
 };
 
-
-
 int main() {
+    Stack <string, 10> lowStack;
+    Stack <string, 10> highStack;
 
+    string name;
+    float gpa;
+
+    fstream f;
+    f.open("data.txt");
+
+    while (!f.eof()) {
+        f >> name;
+        f >> gpa;
+
+        if (gpa <= 3.0) {
+            lowStack.pushStack(name);
+        } else if (gpa > 3.0) {
+            highStack.pushStack(name);
+        }
+    }
+
+    
 }
