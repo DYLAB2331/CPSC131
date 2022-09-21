@@ -69,18 +69,22 @@ int main() {
     cout << "______________________________" << endl;
 
     while (!lowStack.emptyStack() && !highStack.emptyStack()) {
-            if (!highStack.emptyStack()) {
-            string h = highStack.popStack();
-            cout << setw(30) << right << h << endl;
-        }
+        string l = lowStack.popStack();
+        cout << setw(15) << left << l;
 
-            if (!lowStack.emptyStack()) {
-            string l = lowStack.popStack();
-            cout << setw(15) << left << l << endl;
-        }
+        string h = highStack.popStack();
+        cout << setw(15) << right << h << endl;
     }
 
+    if (!highStack.emptyStack()) {
+        string h = highStack.popStack();
+        cout << setw(30) << right << h << endl;
+    }
 
+        if (!lowStack.emptyStack()) {
+        string l = lowStack.popStack();
+        cout << setw(15) << left << l << endl;
+    }
 
     return 0;
 }
