@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 #include "STACKPAC.h"
 using namespace std;
 
@@ -35,6 +36,8 @@ int main() {
     Stack <char, 10> alpha;
     Stack <string, 10> months;
 
+    num.clear(); alpha.clear(); months.clear();
+
     for (int i = 0; i < 11; i++) {
         num.push(randNum());
     }
@@ -69,6 +72,4 @@ int main() {
         string z = months.pop();
         cout << z << " ";
     }
-
-    return 0;
 }
