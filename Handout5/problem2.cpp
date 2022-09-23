@@ -41,24 +41,22 @@ void isPal(string line) {
 
     if (isPal == true) {
         cout << "The phrase is a palindrome" << endl;
-    } else {
+    } else if (isPal == false) {
         cout << "The phrase is not a palindrome" << endl;
     }
 }
 
 int main() {
 
-    string numPhrases;
+    string num;
     string phrase;
 
     cout << "How many phrases would you like to try? ";
 
-    cin >> numPhrases;
-
-    int n = stoi(numPhrases);
+    getline(cin, num);
+    int n = stoi(num);
 
     for (int i = 0; i < n; i++) {
-        cout << endl;
         cout << "Enter a phrase: ";
 
         getline(cin, phrase);
