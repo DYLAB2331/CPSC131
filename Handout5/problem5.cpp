@@ -4,71 +4,41 @@
 #include "STACKPAC.h"
 using namespace std;
 
-int randNum() {
-    srand(time(NULL));
-
-    return rand() % 31;
-}
-
-char randChar() {
-    srand(time(NULL));
-
-    int n = rand() % 26;
-
-    return char(65 + n);
-}
-
-string randMonth() {
-    string months[12] = {"JAN", "FEB", "MAR", "APR", "MAY", "JUL", "JUN", "AUG", "SEP", "OCT", "NOV", "DEC"};
-
-    srand(time(NULL));
-
-    int n = rand() % 13;
-
-    string month = months[n];
-
-    return month;
-}
-
 int main() {
-
+    srand(time(NULL));
     Stack <int, 10> num;
     Stack <char, 10> alpha;
     Stack <string, 10> months;
 
     num.clear(); alpha.clear(); months.clear();
-
-    for (int i = 0; i < 11; i++) {
-        num.push(randNum());
-    }
-
-    for (int i = 0; i < 11; i++) {
-        alpha.push(randChar());
-    }
-
-    for (int i = 0; i < 11; i++) {
-        months.push(randMonth());
-    }
+    string monthsArr[12] = {"JAN", "FEB", "MAR", "APR", "MAY", "JUL", "JUN", "AUG", "SEP", "OCT", "NOV", "DEC"};
 
     cout << "Numbers: ";
-
-    while(!num.empty()) {
+    for (int i = 0; i < 10; i++) {
+        int n = (rand() % 31);
+        
+        num.push(n);
         int x = num.pop();
         cout << x << " ";
     }
-
     cout << endl;
-    cout << "Uppercase letters: ";
 
-    while(!alpha.empty()) {
+    cout << "Uppercase letters: ";
+    for (int i = 0; i < 10; i++) {
+        int a = (rand() % 26);
+        char c = char(65 + a);
+        alpha.push(c);
         char y = alpha.pop();
         cout << y << " ";
     }
-
     cout << endl;
-    cout << "Months: ";
 
-    while(!months.empty()) {
+    cout << "Months: ";
+    for (int i = 0; i < 10; i++) {
+        int m = rand() % 13;
+
+        string month = monthsArr[m];
+        months.push(month);
         string z = months.pop();
         cout << z << " ";
     }
