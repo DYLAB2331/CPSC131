@@ -54,5 +54,5 @@ int main() {
         }
     }
 
-    cout << "Value of postfix expreesion is " << s.pop() << endl;
+    cout << "Value of postfix expression is " << s.pop() << endl;
 } 
