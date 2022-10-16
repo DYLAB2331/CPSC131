@@ -44,6 +44,23 @@ class LinkedList {
                 p = p->next;
             }
         }
+
+        int findMax() {
+            node *p;
+            p = list;
+
+            int max = p->age;
+            p = p->next;
+
+            while (p != NULL) {
+                if (p->age > max) {
+                    max = p->age;
+                }
+                p = p->next;
+            }
+
+            cout << "The oldest person is "
+        }
 };
 
 int main() {
