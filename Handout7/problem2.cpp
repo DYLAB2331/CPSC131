@@ -45,21 +45,23 @@ class LinkedList {
             }
         }
 
-        int findMax() {
+        void findOldest() {
             node *p;
             p = list;
 
             int max = p->age;
+            string oldest = p->name;
             p = p->next;
 
             while (p != NULL) {
                 if (p->age > max) {
                     max = p->age;
+                    oldest = p->name;
                 }
                 p = p->next;
             }
 
-            cout << "The oldest person is "
+            cout << "The oldest person is " << oldest << endl;
         }
 };
 
@@ -78,5 +80,11 @@ int main() {
         L.insert(fname, fage);
     }
 
+    cout << "Name\tAge" << endl;
+    cout << "-----------" << endl;
+
     L.displayList();
+    L.findOldest();
+
+    return 0;
 }
