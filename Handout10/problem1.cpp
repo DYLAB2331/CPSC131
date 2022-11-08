@@ -32,7 +32,7 @@ class orderedList {
             if (oList == NULL) {
                 oList = curr;
             } else {
-                while (p != NULL) {
+                while (p != NULL && x > p->acctNo) {
                     q = p;
                     p = p->next;
                 }
@@ -49,7 +49,7 @@ class orderedList {
 
         void showBalance() {
             int acct;
-            cout << "Enter account number: ";
+            cout << "Enter your account number: ";
             cin >> acct;
 
             node *curr = oList;
@@ -57,12 +57,12 @@ class orderedList {
                 curr = curr->next;
             }
 
-            cout << "Balance is " << curr->balance << endl;
+            cout << curr->name << ", your balance is " << curr->balance << endl;
         }
 
         void deposit() {
             int acct;
-            cout << "Enter account number: ";
+            cout << "Enter your account number: ";
             cin >> acct;
 
             node *curr = oList;
@@ -71,17 +71,17 @@ class orderedList {
             }
 
             float depositAmount;
-            cout << "Enter amount to be deposited: ";
+            cout << curr->name << ", how much would you like to deposit? ";
             cin >> depositAmount;
 
             curr->balance += depositAmount;
 
-            cout << "Your new balance is " << curr->balance << endl;
+            cout << curr->name << ", your new balance is " << curr->balance << endl;
         }
 
         void withdraw() {
             int acct;
-            cout << "Enter account number: ";
+            cout << "Enter your account number: ";
             cin >> acct;
 
             node *curr = oList;
@@ -90,7 +90,7 @@ class orderedList {
             }
 
             float withdrawAmount;
-            cout << "Enter amount to be withdrawn: ";
+            cout << curr->name << ", how much would you like to withdraw? ";
             cin >> withdrawAmount;
 
             if (withdrawAmount > curr->balance) {
@@ -100,7 +100,7 @@ class orderedList {
 
             curr->balance -= withdrawAmount;
 
-            cout << "Your new balance is " << curr->balance << endl;
+            cout << curr->name << ", your new balance is " << curr->balance << endl;
         }
 
         void showAll() {
@@ -121,8 +121,8 @@ class orderedList {
 
             if (curr->acctNo == acct) {
                 oList = curr->next;
+                cout << curr->name << ", we have closed your account" << endl;
                 delete curr;
-                cout << "Account deleted" << endl;
                 return;
             }
 
@@ -132,9 +132,9 @@ class orderedList {
             }
 
             temp->next = curr->next;
+            cout << curr->name << ", we have closed your account" << endl;
             delete curr;
-
-            cout << "Account deleted" << endl;
+            
             return;
         }
 };
