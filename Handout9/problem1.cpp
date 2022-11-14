@@ -67,7 +67,7 @@ class HASH {
 };
 
 int main() {
-    string months[12] = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
+    string months[12] = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUY", "AUG", "SEP", "OCT", "NOV", "DEC"};
     int days[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     HASH h;
